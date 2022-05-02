@@ -20,11 +20,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 enum custom_keycodes {
     CLIP = SAFE_RANGE,
     LOCK,
-	SPOT,
+	SPOT, /*
 	QC1,
 	QC2,
 	QC3,
 	QC4,
+	*/
 };
 
 // Macro Definitions
@@ -48,7 +49,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		}
         break;
 		
-	//Quickchats
+	//Quickchats 
+	/*
     case QC1: 
         if (record->event.pressed) {
            SEND_STRING("tSheesh!"SS_TAP(X_ENT));
@@ -68,6 +70,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed) {
            SEND_STRING("tYou better scramble like an egg before you get folded like a omelet!"SS_TAP(X_ENT));
         }
+	*/
         break;
     }
     return true;
@@ -114,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 	
 	[2] = LAYOUT(
-        _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   _______, _______, _______, _______, QC1,     QC2,     QC3,     QC4,     _______,          _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______,          _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_BSLS,          _______,
         KC_CAPS, _______, _______, _______, _______, _______, _______, _______, _______, LOCK,    _______, _______,          _______,          _______,
